@@ -56,7 +56,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "lint": "node_modules/.bin/esw webpack.config.* src ",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "flow": "flow; test $? -eq 0 -o $? -eq 2"
   },
   "jest": {
     "collectCoverageFrom": [
