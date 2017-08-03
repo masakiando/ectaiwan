@@ -46,10 +46,12 @@
     "eslint": "^3.19.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-react": "^7.1.0",
-    "eslint-watch": "^3.1.2"
+    "eslint-watch": "^3.1.2",
+    "npm-run-all": "^4.0.2"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "npm-run-all --parallel open:src lint:watch " ,
+    "open:src": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "lint": "node_modules/.bin/esw webpack.config.* src ",
